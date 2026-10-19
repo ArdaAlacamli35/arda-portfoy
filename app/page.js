@@ -18,7 +18,7 @@ const projects = [
   {
     title: "İkinci El Araç Fiyat Tahmini",
     kind: "Bitirme projesi",
-    text: "Aracın teknik ve fiziksel özelliklerinden piyasa değerini tahmin eden makine öğrenmesi modeli.",
+    text: "Üç modeli karşılaştırdım; en iyisi Random Forest, fiyattaki değişimin %91,9'unu açıklıyor.",
   },
 ];
 

@@ -2,6 +2,12 @@ import PageIntro from "@/components/PageIntro";
 
 export const metadata = { title: "Projeler" };
 
+const models = [
+  { name: "Random Forest", r2: 91.9, best: true },
+  { name: "XGBoost", r2: 88.5 },
+  { name: "Doğrusal Regresyon", r2: 46.6 },
+];
+
 export default function ProjelerPage() {
   return (
     <div className="wrap">
@@ -52,16 +58,33 @@ export default function ProjelerPage() {
         <h2>Makine Öğrenmesi ile İkinci El Araç Fiyat Tahmini</h2>
         <div className="prose">
           <p>
-            İkinci el araçların teknik ve fiziksel özelliklerinin piyasa değeri üzerindeki
-            etkisini analiz eden, makine öğrenmesi tabanlı bir proje. Python ile veri setleri
-            temizlendi, aykırı değer analizi (EDA) ve özellik mühendisliği süreçleri yürütüldü.
+            ABD&apos;deki ikinci el araç satışlarından oluşan bir veri setiyle, aracın marka, model,
+            yıl, kasa tipi ve kat ettiği mesafe gibi özelliklerinden satış fiyatını tahmin eden
+            bir model geliştirdim. Veriyi Python ile temizledim, aykırı değerleri IQR yöntemiyle
+            ayıkladım ve üç farklı modeli karşılaştırdım.
           </p>
         </div>
+
+        <figure className="model-compare">
+          <figcaption>Test verisinde açıklanan fiyat değişimi (R²)</figcaption>
+          <ul>
+            {models.map((m) => (
+              <li key={m.name} className={m.best ? "best" : undefined}>
+                <span className="name">{m.name}</span>
+                <span className="bar" aria-hidden="true">
+                  <span style={{ width: `${m.r2}%` }} />
+                </span>
+                <span className="value">%{m.r2.toLocaleString("tr-TR")}</span>
+              </li>
+            ))}
+          </ul>
+        </figure>
+
         <dl className="io">
-          <dt>Girdi</dt>
-          <dd>Aracın teknik ve fiziksel özellikleri</dd>
-          <dt>Çıktı</dt>
-          <dd>Tahmini piyasa değeri</dd>
+          <dt>En iyi model</dt>
+          <dd>Random Forest: tahminler gerçek fiyattan ortalama 1.446 $ sapıyor</dd>
+          <dt>Bulgu</dt>
+          <dd>Fiyatı en çok aracın kat ettiği mesafe belirliyor, ardından kasa tipi ve model yılı</dd>
         </dl>
         <div className="actions">
           <a

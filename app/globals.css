@@ -379,6 +379,48 @@ main { padding-bottom: 72px; }
 }
 .io dt { color: var(--sis); }
 
+/* model karşılaştırma çubukları */
+.model-compare {
+  margin: 28px 0 0;
+  max-width: 640px;
+}
+.model-compare figcaption {
+  font-size: 0.95rem;
+  color: var(--sis);
+  margin-bottom: 12px;
+}
+.model-compare li {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) 64px;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 0;
+}
+.model-compare .bar {
+  height: 10px;
+  border-radius: 3px;
+  background: var(--duvar);
+  overflow: hidden;
+}
+.model-compare .bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--sis);
+  opacity: 0.55;
+  transform-origin: left;
+}
+.model-compare .best .bar span { background: var(--pencere); opacity: 1; }
+.model-compare .value { text-align: right; font-weight: 600; }
+.model-compare .best .name,
+.model-compare .best .value { color: var(--pencere); }
+/* çubuklar, proje ekrana girince soldan dolar */
+.js .project[data-reveal] .model-compare .bar span {
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.1, 1) 0.3s;
+}
+.js .project[data-reveal].in .model-compare .bar span { transform: scaleX(1); }
+
 /* ---------- iletişim ---------- */
 .channels > div {
   display: grid;
@@ -447,12 +489,14 @@ main { padding-bottom: 72px; }
   .project-list a { grid-template-columns: 1fr; }
   .project-list .kind { grid-column: 1; grid-row: auto; }
   .page-intro { padding-top: 40px; }
+  .model-compare li { grid-template-columns: 120px minmax(0, 1fr) 56px; gap: 10px; font-size: 0.95rem; }
   .hero { padding-top: 64px; }
   .hero .lead { font-size: 1.1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .js [data-reveal] { opacity: 1; transform: none; }
+  .js .project[data-reveal] .model-compare .bar span { transform: none; }
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
