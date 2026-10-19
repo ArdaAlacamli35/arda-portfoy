@@ -27,7 +27,7 @@ const facts = [
 const tiles = [
   { href: "/deneyim", color: "var(--mint)", icon: "bk", title: "Deneyim", text: "Eğitim geçmişim" },
   { href: "/yetenekler", color: "var(--glow)", icon: "bolt", title: "Yetenekler", text: "Python, C#, veri analizi, Office" },
-  { href: "/projeler", color: "var(--peach)", icon: "chart", title: "Projeler", text: "İkinci el araç fiyat tahmini" },
+  { href: "/projeler", color: "var(--peach)", icon: "chart", title: "Projeler", text: "Araç fiyat tahmini, deprem veri hikâyesi" },
   { href: "/iletisim", color: "var(--sky)", icon: "mail", title: "İletişim", text: "Bana ulaş" },
 ];
 
