@@ -5,7 +5,7 @@ export const metadata = { title: "Yetenekler" };
 const groups = [
   {
     title: "Veri analizi",
-    items: ["Veri temizleme", "Keşifçi veri analizi (EDA)", "Aykırı değer analizi", "Makine öğrenmesi"],
+    items: ["Veri temizleme ve hazırlama", "Keşifçi veri analizi (EDA)", "Veri görselleştirme", "Makine öğrenmesi"],
     note: "Araç fiyat tahmini ve deprem veri hikâyesi projelerinde kullandım.",
   },
   {
@@ -19,6 +19,12 @@ const groups = [
     level: "İleri düzey",
     items: ["Excel", "Word", "PowerPoint"],
     note: "Veri tablolama, rapor hazırlama ve proje sunumu.",
+  },
+  {
+    title: "Araçlar",
+    level: "Temel düzey",
+    items: ["Git", "GitHub", "Vercel"],
+    note: "Projelerimi GitHub'da tutuyor, web projelerimi Vercel ile yayınlıyorum.",
   },
 ];
 
