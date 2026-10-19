@@ -30,7 +30,6 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  font-variant-numeric: tabular-nums;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -411,7 +410,7 @@ main { padding-bottom: 72px; }
   transform-origin: left;
 }
 .model-compare .best .bar span { background: var(--pencere); opacity: 1; }
-.model-compare .value { text-align: right; font-weight: 600; }
+.model-compare .value { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
 .model-compare .best .name,
 .model-compare .best .value { color: var(--pencere); }
 /* çubuklar, proje ekrana girince soldan dolar */
