@@ -18,7 +18,7 @@ const projects = [
   {
     title: "İkinci El Araç Fiyat Tahmini",
     kind: "Dönem projesi",
-    text: "Üç modeli karşılaştırdım; en iyisi Random Forest, fiyattaki değişimin %91,9'unu açıklıyor.",
+    text: "528 bin satış kaydıyla üç modeli karşılaştırdım; en iyisi fiyattaki farkların %95,8'ini açıklıyor.",
   },
 ];
 

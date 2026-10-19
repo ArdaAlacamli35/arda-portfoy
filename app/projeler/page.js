@@ -3,9 +3,9 @@ import PageIntro from "@/components/PageIntro";
 export const metadata = { title: "Projeler" };
 
 const models = [
-  { name: "Random Forest", r2: 91.9, best: true },
-  { name: "XGBoost", r2: 88.5 },
-  { name: "Doğrusal Regresyon", r2: 46.6 },
+  { name: "Gradient Boosting", r2: 95.8, best: true },
+  { name: "Random Forest", r2: 95.3 },
+  { name: "Doğrusal Regresyon", r2: 69.7 },
 ];
 
 export default function ProjelerPage() {
@@ -58,10 +58,10 @@ export default function ProjelerPage() {
         <h2>Makine Öğrenmesi ile İkinci El Araç Fiyat Tahmini</h2>
         <div className="prose">
           <p>
-            ABD&apos;deki ikinci el araç satışlarından oluşan bir veri setiyle, aracın marka, model,
-            yıl, kasa tipi ve kat ettiği mesafe gibi özelliklerinden satış fiyatını tahmin eden
-            bir model geliştirdim. Veriyi Python ile temizledim, aykırı değerleri IQR yöntemiyle
-            ayıkladım ve üç farklı modeli karşılaştırdım.
+            ABD&apos;de gerçekleşmiş 528 bin ikinci el araç satışıyla, aracın markası, modeli, yaşı,
+            kat ettiği mesafe ve durumundan satış fiyatını tahmin eden bir model geliştirdim. Veriyi
+            temizlerken aracın durum puanının iki farklı ölçekte girildiğini fark edip tek ölçeğe
+            getirdim, satış tarihinden araç yaşını hesapladım ve üç modeli karşılaştırdım.
           </p>
         </div>
 
@@ -82,9 +82,9 @@ export default function ProjelerPage() {
 
         <dl className="io">
           <dt>En iyi model</dt>
-          <dd>Random Forest: tahminler gerçek fiyattan ortalama 1.446 $ sapıyor</dd>
+          <dd>Gradient Boosting: tahminler gerçek fiyattan ortalama 1.199 $ sapıyor</dd>
           <dt>Bulgu</dt>
-          <dd>Fiyatı en çok aracın kat ettiği mesafe belirliyor, ardından kasa tipi ve model yılı</dd>
+          <dd>Fiyatı en çok aracın kat ettiği mesafe belirliyor, ardından kasa tipi ve marka</dd>
         </dl>
         <div className="actions">
           <a
