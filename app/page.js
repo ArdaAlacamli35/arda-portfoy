@@ -25,23 +25,22 @@ const projects = [
 export default function HomePage() {
   return (
     <>
-      <section className="hero" role="img" aria-label="Akşam alacasında karlı bir şehir, piksel çizim">
+      <section className="hero">
         <div className="wrap">
-          <h1>Arda Alaçamlı</h1>
+          <h1><span>Arda Alaçamlı</span></h1>
           <p className="role">Veri analizi ve makine öğrenmesi</p>
+          <p className="lead">
+            Ham veriyi temizleyip analiz ediyor, Python ile sonuca dönüştürüyorum. Manisa Celal
+            Bayar Üniversitesi&apos;nde Büyük Veri Analistliği okuyorum.
+          </p>
+          <div className="actions">
+            <Link className="btn" href="/projeler">Projeleri gör</Link>
+            <Link className="btn alt" href="/iletisim">İletişime geç</Link>
+          </div>
         </div>
       </section>
 
       <div className="wrap">
-        <p className="lead">
-          Ham veriyi temizleyip analiz ediyor, Python ile sonuca dönüştürüyorum. Manisa Celal
-          Bayar Üniversitesi&apos;nde Büyük Veri Analistliği okuyorum.
-        </p>
-        <div className="actions">
-          <Link className="btn" href="/projeler">Projeleri gör</Link>
-          <Link className="btn alt" href="/iletisim">İletişime geç</Link>
-        </div>
-
         <dl className="facts">
           {facts.map(([label, value]) => (
             <div key={label}>
