@@ -1,18 +1,20 @@
-import Sprite from "./Sprite";
-
 export default function Footer() {
   return (
-    <footer>
-      <div className="scene" aria-hidden="true">
-        <span className="tree" style={{ left: "9%" }}><Sprite name="tree" w={88} /></span>
-        <span className="tree t2" style={{ left: "20%" }}><Sprite name="tree" w={64} /></span>
-        <span className="lamp"><Sprite name="lamp" w={40} /></span>
-        <span className="tree" style={{ right: "10%" }}><Sprite name="tree" w={88} /></span>
-        <span className="tree t2" style={{ right: "22%" }}><Sprite name="tree" w={64} /></span>
-        <div className="ground" />
-      </div>
-      <div className="copy">
-        <div className="wrap">© 2026 Arda Alaçamlı</div>
+    <footer className="site-footer">
+      <div className="wrap">
+        <span>© 2026 Arda Alaçamlı, İzmir</span>
+        <nav aria-label="Profiller">
+          <a href="https://github.com/ArdaAlacamli35" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/arda-ala%C3%A7aml%C4%B1-98791743b/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </nav>
       </div>
     </footer>
   );

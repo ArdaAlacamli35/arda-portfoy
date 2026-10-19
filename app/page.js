@@ -1,107 +1,86 @@
 import Link from "next/link";
-import Sprite from "@/components/Sprite";
-import SectionTitle from "@/components/SectionTitle";
 
 export const metadata = { title: "Hakkımda" };
-
-// [css sınıfı, metin] çiftleri; sınıfı olmayanlar düz metin
-const codeLines = [
-  [["c", "# profil.py"]],
-  [["k", "class"], [null, " "], ["f", "Arda"], [null, ":"]],
-  [[null, "    ad = "], ["s", '"Arda Alaçamlı"']],
-  [[null, "    rol = "], ["s", '"Büyük Veri Analisti Adayı"']],
-  [[null, "    okul = "], ["s", '"Manisa Celal Bayar Üniv."']],
-  [[null, "    diller = ["], ["s", '"Python"'], [null, ", "], ["s", '"C#"'], [null, "]"]],
-  [[null, " "]],
-  [[null, "    "], ["k", "def"], [null, " "], ["f", "hedef"], [null, "(self):"]],
-  [[null, "        "], ["k", "return"], [null, " "], ["s", '"veriden anlam çıkarmak"']],
-];
 
 const facts = [
   ["Konum", "İzmir, Konak"],
   ["Bölüm", "Büyük Veri Analistliği"],
-  ["Durum", "Son sınıf"],
+  ["Okul", "Manisa Celal Bayar Üniv."],
   ["Diller", "Python, C#"],
 ];
 
-const tiles = [
-  { href: "/deneyim", color: "var(--mint)", icon: "bk", title: "Deneyim", text: "Eğitim geçmişim" },
-  { href: "/yetenekler", color: "var(--glow)", icon: "bolt", title: "Yetenekler", text: "Python, C#, veri analizi, Office" },
-  { href: "/projeler", color: "var(--peach)", icon: "chart", title: "Projeler", text: "Araç fiyat tahmini, deprem veri hikâyesi" },
-  { href: "/iletisim", color: "var(--sky)", icon: "mail", title: "İletişim", text: "Bana ulaş" },
+const projects = [
+  {
+    title: "Türkiye Deprem Hikâyesi",
+    kind: "Veri hikâyesi",
+    text: "1914–2023 depremlerini kaydırdıkça ilerleyen harita ve grafiklerle anlatan interaktif site.",
+  },
+  {
+    title: "İkinci El Araç Fiyat Tahmini",
+    kind: "Bitirme projesi",
+    text: "Aracın teknik ve fiziksel özelliklerinden piyasa değerini tahmin eden makine öğrenmesi modeli.",
+  },
 ];
 
 export default function HomePage() {
   return (
-    <section className="page">
-      <div className="wrap">
-        <div className="hero">
+    <>
+      <section className="hero" role="img" aria-label="Akşam alacasında karlı bir şehir, piksel çizim">
+        <div className="wrap">
           <h1>Arda Alaçamlı</h1>
-          <p className="role">Büyük Veri Analisti Adayı</p>
-          <p className="lead">
-            Veriyi temizleyen, analiz eden ve Python ile anlamlı sonuçlara dönüştüren, proje
-            odaklı bir son sınıf öğrencisiyim.
-          </p>
-          <div className="cta">
-            <Link className="btn" href="/projeler">Projeye göz at</Link>
-            <Link className="btn alt" href="/iletisim">İletişime geç</Link>
-          </div>
+          <p className="role">Veri analizi ve makine öğrenmesi</p>
+        </div>
+      </section>
+
+      <div className="wrap">
+        <p className="lead">
+          Ham veriyi temizleyip analiz ediyor, Python ile sonuca dönüştürüyorum. Manisa Celal
+          Bayar Üniversitesi&apos;nde Büyük Veri Analistliği okuyorum.
+        </p>
+        <div className="actions">
+          <Link className="btn" href="/projeler">Projeleri gör</Link>
+          <Link className="btn alt" href="/iletisim">İletişime geç</Link>
         </div>
 
-        <div className="card code" aria-hidden="true">
-          <div className="bar">
-            <i /><i /><i />&nbsp; profil.py
-          </div>
-          <pre>
-            {codeLines.map((tokens, i) => (
-              <span key={i} className="ln" style={{ "--i": i }}>
-                {tokens.map(([cls, text], j) =>
-                  cls ? <span key={j} className={cls}>{text}</span> : text
-                )}
-                {i === codeLines.length - 1 && <span className="cur" />}
-              </span>
-            ))}
-          </pre>
-        </div>
-
-        <div className="facts">
+        <dl className="facts">
           {facts.map(([label, value]) => (
             <div key={label}>
-              <small>{label}</small>
-              {value}
+              <dt>{label}</dt>
+              <dd>{value}</dd>
             </div>
           ))}
-        </div>
+        </dl>
 
-        <div className="card about">
-          <SectionTitle>Hakkımda</SectionTitle>
+        <section className="section">
+          <h2>Projeler</h2>
+          <ul className="project-list">
+            {projects.map((p) => (
+              <li key={p.title}>
+                <Link href="/projeler">
+                  <h3>{p.title}</h3>
+                  <span className="kind">{p.kind}</span>
+                  <p>{p.text}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="section prose">
+          <h2>Hakkımda</h2>
           <p>
-            Veriden anlamlı sonuçlar çıkarmak, beni en çok motive eden iş. Manisa Celal Bayar
-            Üniversitesi&apos;nde Büyük Veri Analistliği okuyorum ve şu an son sınıftayım. Python
-            ve C# ile projeler geliştiriyorum; bitirme projemde ikinci el araç fiyatlarını
-            makine öğrenmesiyle tahmin etmeye çalışıyorum.
+            Veriden anlamlı sonuçlar çıkarmak, beni en çok motive eden iş. Python ve C# ile
+            projeler geliştiriyorum. Bitirme projemde ikinci el araç fiyatlarını makine
+            öğrenmesiyle tahmin ediyorum, Türkiye deprem verisiyle de interaktif bir veri hikâyesi
+            hazırladım.
           </p>
           <p>
             Veriyi temizlemekten aykırı değer analizine kadar süreci baştan sona kendim
-            yürütüyorum, sonuçları da Excel, Word ve PowerPoint ile okunur raporlara ve
-            sunumlara dönüştürüyorum. Yeni araçlar öğrenmeye ve gerçek problemlere pratik
-            çözümler bulmaya açığım.
+            yürütüyorum. Sonuçları Excel, Word ve PowerPoint ile okunur raporlara ve sunumlara
+            dönüştürüyorum. Staj ve proje iş birliklerine açığım.
           </p>
-        </div>
-
-        <SectionTitle>Gezin</SectionTitle>
-        <div className="tiles">
-          {tiles.map((t) => (
-            <Link key={t.href} className="tile card" style={{ "--c": t.color }} href={t.href}>
-              <span className="ic" style={{ "--c": t.color }}>
-                <Sprite name={t.icon} />
-              </span>
-              <b>{t.title}</b>
-              <span className="t">{t.text}</span>
-            </Link>
-          ))}
-        </div>
+        </section>
       </div>
-    </section>
+    </>
   );
 }

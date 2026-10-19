@@ -1,50 +1,50 @@
-import SectionTitle from "@/components/SectionTitle";
-import SkillCard from "@/components/SkillCard";
+import PageIntro from "@/components/PageIntro";
 
 export const metadata = { title: "Yetenekler" };
 
-const analysis = ["Veri temizleme", "Keşifçi veri analizi (EDA)", "Aykırı değer analizi", "Makine öğrenmesi"];
-const office = ["Raporlama", "Veri tablolama", "Proje sunumu"];
+const groups = [
+  {
+    title: "Veri analizi",
+    items: ["Veri temizleme", "Keşifçi veri analizi (EDA)", "Aykırı değer analizi", "Makine öğrenmesi"],
+    note: "Araç fiyat tahmini ve deprem veri hikâyesi projelerinde kullandım.",
+  },
+  {
+    title: "Programlama",
+    level: "İyi düzey",
+    items: ["Python", "C#"],
+    note: "Veri temizleme, analiz ve modelleme için Python kullanıyorum.",
+  },
+  {
+    title: "Raporlama",
+    level: "İleri düzey",
+    items: ["Excel", "Word", "PowerPoint"],
+    note: "Veri tablolama, rapor hazırlama ve proje sunumu.",
+  },
+];
 
 export default function YeteneklerPage() {
   return (
-    <section className="page">
-      <div className="wrap">
-        <SectionTitle>Yetenekler</SectionTitle>
+    <div className="wrap">
+      <PageIntro title="Yetenekler" />
 
-        <SkillCard
-          label="İyi düzey"
-          title="Programlama"
-          color="var(--lilac)"
-          level="72%"
-          skills={["Python", "C#"]}
-        />
-        <SkillCard
-          label="İleri düzey"
-          title="Microsoft Office"
-          color="var(--peach)"
-          level="92%"
-          skills={["Excel", "Word", "PowerPoint"]}
-        />
-
-        <div className="card">
-          <h3>Veri analizi</h3>
-          <div className="pills">
-            {analysis.map((p) => (
-              <span key={p} className="pill" style={{ "--c": "var(--sky)" }}>{p}</span>
-            ))}
+      <div className="skill-groups">
+        {groups.map((g) => (
+          <div key={g.title}>
+            <div>
+              <h2>{g.title}</h2>
+              {g.level && <span>{g.level}</span>}
+            </div>
+            <div>
+              <ul className="tags">
+                {g.items.map((i) => (
+                  <li key={i}>{i}</li>
+                ))}
+              </ul>
+              <p>{g.note}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="card">
-          <h3>Office ile yapabildiklerim</h3>
-          <div className="pills">
-            {office.map((p) => (
-              <span key={p} className="pill" style={{ "--c": "var(--mint)" }}>{p}</span>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
