@@ -28,8 +28,8 @@ export default function YeteneklerPage() {
       <PageIntro title="Yetenekler" />
 
       <div className="skill-groups">
-        {groups.map((g) => (
-          <div key={g.title}>
+        {groups.map((g, i) => (
+          <div key={g.title} data-reveal style={{ "--d": i }}>
             <div>
               <h2>{g.title}</h2>
               {g.level && <span>{g.level}</span>}

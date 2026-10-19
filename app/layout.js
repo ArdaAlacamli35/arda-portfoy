@@ -2,6 +2,7 @@ import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const sans = Schibsted_Grotesk({
   subsets: ["latin", "latin-ext"],
@@ -28,11 +29,16 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="tr" className={sans.variable}>
+    <html lang="tr" className={sans.variable} suppressHydrationWarning>
+      <head>
+        {/* JS varsa kaydırma animasyonları için öğeleri başta gizle */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollReveal />
       </body>
     </html>
   );

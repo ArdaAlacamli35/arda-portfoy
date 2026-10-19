@@ -29,8 +29,8 @@ export default function IletisimPage() {
       </PageIntro>
 
       <dl className="channels">
-        {channels.map((c) => (
-          <div key={c.label}>
+        {channels.map((c, i) => (
+          <div key={c.label} data-reveal style={{ "--d": i }}>
             <dt>{c.label}</dt>
             <dd>
               <a
@@ -44,7 +44,7 @@ export default function IletisimPage() {
         ))}
       </dl>
 
-      <div className="actions">
+      <div className="actions" data-reveal style={{ "--d": 3 }}>
         <a className="btn" href={mailto}>E-posta gönder</a>
       </div>
     </div>

@@ -42,8 +42,8 @@ export default function HomePage() {
 
       <div className="wrap">
         <dl className="facts">
-          {facts.map(([label, value]) => (
-            <div key={label}>
+          {facts.map(([label, value], i) => (
+            <div key={label} data-reveal style={{ "--d": i }}>
               <dt>{label}</dt>
               <dd>{value}</dd>
             </div>
@@ -51,10 +51,10 @@ export default function HomePage() {
         </dl>
 
         <section className="section">
-          <h2>Projeler</h2>
+          <h2 data-reveal>Projeler</h2>
           <ul className="project-list">
-            {projects.map((p) => (
-              <li key={p.title}>
+            {projects.map((p, i) => (
+              <li key={p.title} data-reveal style={{ "--d": i + 1 }}>
                 <Link href="/projeler">
                   <h3>{p.title}</h3>
                   <span className="kind">{p.kind}</span>
@@ -66,14 +66,14 @@ export default function HomePage() {
         </section>
 
         <section className="section prose">
-          <h2>Hakkımda</h2>
-          <p>
+          <h2 data-reveal>Hakkımda</h2>
+          <p data-reveal style={{ "--d": 1 }}>
             Veriden anlamlı sonuçlar çıkarmak, beni en çok motive eden iş. Python ve C# ile
             projeler geliştiriyorum. Bitirme projemde ikinci el araç fiyatlarını makine
             öğrenmesiyle tahmin ediyorum, Türkiye deprem verisiyle de interaktif bir veri hikâyesi
             hazırladım.
           </p>
-          <p>
+          <p data-reveal style={{ "--d": 2 }}>
             Veriyi temizlemekten aykırı değer analizine kadar süreci baştan sona kendim
             yürütüyorum. Sonuçları Excel, Word ve PowerPoint ile okunur raporlara ve sunumlara
             dönüştürüyorum. Staj ve proje iş birliklerine açığım.

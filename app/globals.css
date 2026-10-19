@@ -412,6 +412,20 @@ main { padding-bottom: 72px; }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { color: var(--kar); }
 
+/* ---------- kaydırırken belirme ---------- */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.1, 1);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+.js [data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
 /* ---------- animasyonlar ---------- */
 @keyframes yuksel { from { transform: translateY(105%); } to { transform: none; } }
 @keyframes belir { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
@@ -438,6 +452,7 @@ main { padding-bottom: 72px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1; transform: none; }
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;

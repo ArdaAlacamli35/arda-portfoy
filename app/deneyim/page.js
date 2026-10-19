@@ -23,8 +23,13 @@ export default function DeneyimPage() {
       <PageIntro title="Deneyim ve eğitim" />
 
       <ol className="timeline">
-        {steps.map((s) => (
-          <li key={s.title} className={s.current ? "current" : undefined}>
+        {steps.map((s, i) => (
+          <li
+            key={s.title}
+            className={s.current ? "current" : undefined}
+            data-reveal
+            style={{ "--d": i }}
+          >
             <p className="when">{s.when}</p>
             <h2>{s.title}</h2>
             <p>{s.place}</p>

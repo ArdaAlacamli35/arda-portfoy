@@ -9,7 +9,7 @@ export default function ProjelerPage() {
         Veriyi topladığım, temizlediğim ve bir soruya cevap verecek hale getirdiğim çalışmalar.
       </PageIntro>
 
-      <article className="project">
+      <article className="project" data-reveal>
         <p className="kind">Veri hikâyesi</p>
         <h2>Türkiye Deprem Hikâyesi</h2>
         <div className="prose">
@@ -47,7 +47,7 @@ export default function ProjelerPage() {
         </div>
       </article>
 
-      <article className="project">
+      <article className="project" data-reveal>
         <p className="kind">Bitirme projesi</p>
         <h2>Makine Öğrenmesi ile İkinci El Araç Fiyat Tahmini</h2>
         <div className="prose">
