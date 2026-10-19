@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "İkinci El Araç Fiyat Tahmini",
-    kind: "Dönem projesi",
+    kind: "Makine öğrenmesi",
     text: "528 bin satış kaydıyla üç modeli karşılaştırdım; en iyisi fiyattaki farkların %95,8'ini açıklıyor.",
   },
 ];
@@ -69,7 +69,7 @@ export default function HomePage() {
           <h2 data-reveal>Hakkımda</h2>
           <p data-reveal style={{ "--d": 1 }}>
             Veriden anlamlı sonuçlar çıkarmak, beni en çok motive eden iş. Python ve C# ile
-            projeler geliştiriyorum. Dönem projemde ikinci el araç fiyatlarını makine
+            projeler geliştiriyorum. Bir projemde ikinci el araç fiyatlarını makine
             öğrenmesiyle tahmin ettim, Türkiye deprem verisiyle de interaktif bir veri hikâyesi
             hazırladım.
           </p>

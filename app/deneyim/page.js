@@ -7,7 +7,7 @@ const steps = [
     when: "2025 – devam ediyor",
     title: "Büyük Veri Analistliği, Ön Lisans",
     place: "Manisa Celal Bayar Üniversitesi",
-    note: "Son yıl. Dönem projelerimden biri: makine öğrenmesi ile ikinci el araç fiyat tahmini.",
+    note: "Son yıl.",
     current: true,
   },
   {
