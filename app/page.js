@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "İkinci El Araç Fiyat Tahmini",
-    kind: "Bitirme projesi",
+    kind: "Dönem projesi",
     text: "Üç modeli karşılaştırdım; en iyisi Random Forest, fiyattaki değişimin %91,9'unu açıklıyor.",
   },
 ];
@@ -69,8 +69,8 @@ export default function HomePage() {
           <h2 data-reveal>Hakkımda</h2>
           <p data-reveal style={{ "--d": 1 }}>
             Veriden anlamlı sonuçlar çıkarmak, beni en çok motive eden iş. Python ve C# ile
-            projeler geliştiriyorum. Bitirme projemde ikinci el araç fiyatlarını makine
-            öğrenmesiyle tahmin ediyorum, Türkiye deprem verisiyle de interaktif bir veri hikâyesi
+            projeler geliştiriyorum. Dönem projemde ikinci el araç fiyatlarını makine
+            öğrenmesiyle tahmin ettim, Türkiye deprem verisiyle de interaktif bir veri hikâyesi
             hazırladım.
           </p>
           <p data-reveal style={{ "--d": 2 }}>

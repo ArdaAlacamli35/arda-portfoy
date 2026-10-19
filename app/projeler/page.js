@@ -54,7 +54,7 @@ export default function ProjelerPage() {
       </article>
 
       <article className="project" data-reveal>
-        <p className="kind">Bitirme projesi</p>
+        <p className="kind">Dönem projesi</p>
         <h2>Makine Öğrenmesi ile İkinci El Araç Fiyat Tahmini</h2>
         <div className="prose">
           <p>
