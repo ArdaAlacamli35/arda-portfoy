@@ -74,12 +74,14 @@ export default async function AdminReferanslarPage({ searchParams }) {
                     </button>
                   </form>
                 </td>
-                <td className="row-actions">
-                  <Link className="text-link" href={`/admin/referanslar/${r.id}`}>Düzenle</Link>
-                  <form action={referansSil}>
-                    <input type="hidden" name="id" value={r.id} />
-                    <button className="link-danger" type="submit">Sil</button>
-                  </form>
+                <td>
+                  <div className="row-actions">
+                    <Link className="text-link" href={`/admin/referanslar/${r.id}`}>Düzenle</Link>
+                    <form action={referansSil}>
+                      <input type="hidden" name="id" value={r.id} />
+                      <button className="link-danger" type="submit">Sil</button>
+                    </form>
+                  </div>
                 </td>
               </tr>
             ))}

@@ -557,7 +557,7 @@ button:disabled { opacity: 0.6; cursor: progress; }
 .pill.on { border-color: #5c4521; color: var(--pencere); background: var(--pencere-koyu); }
 button.pill:hover { border-color: var(--sis); }
 
-.row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.row-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px 14px; white-space: nowrap; }
 .link-danger { background: none; border: 0; padding: 0; color: #ff9a8a; text-decoration: underline; text-underline-offset: 3px; }
 .warn { color: #ff9a8a; }
 .block { display: block; }
