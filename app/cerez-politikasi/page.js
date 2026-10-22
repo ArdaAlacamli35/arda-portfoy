@@ -36,9 +36,9 @@ export default async function CerezPolitikasiPage() {
         <p>
           KVKK Kurulu&apos;nun Çerez Uygulamaları Hakkında Rehberi&apos;ne göre, bir hizmetin
           çalışması için kesinlikle gerekli olan zorunlu çerezler için açık rıza alınması gerekmez;
-          ancak bu sayfadaki gibi bilgilendirme yapılır. Analitik veya pazarlama çerezleri
-          kullanılsaydı, bunlar yalnızca ziyaretçinin açık rızasıyla, onay verildikten sonra
-          çalıştırılabilirdi.
+          ancak bu sayfadaki gibi bilgilendirme yapılır. Google Analytics gibi üçüncü taraf
+          analitik araçları veya reklam (pazarlama) çerezleri kullanılsaydı, bunlar yalnızca
+          ziyaretçinin açık rızasıyla, onay verildikten sonra çalıştırılabilirdi.
         </p>
       </div>
 
