@@ -55,7 +55,7 @@ export default async function ReferanslarPage() {
   return (
     <div className="wrap">
       <PageIntro title="Referanslar">
-        Birlikte okuduğum, çalıştığım ve proje yaptığım kişilerin benim hakkımdaki görüşleri.
+        Birlikte okuduğum ve çalıştığım kişilerin benim hakkımdaki görüşleri.
       </PageIntro>
 
       {tumu.length === 0 && <p className="muted">Henüz yayınlanmış bir referans yok.</p>}
