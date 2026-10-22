@@ -86,6 +86,37 @@ INSERT INTO referanslar (kisi_adi, unvan, yorum, puan, tarih, izin_alindi, kateg
   ('Deniz K.', 'Rehber Öğretmen', NULL, 4, NULL, false, 3),
   ('Arda Alaçamlı (2516016006)', 'Öğrenci', 'Görev 3.5 için eklenen deneme kaydı.', 2, '2026-10-20', false, NULL);
 
+-- ---------- Veri düzeltmeleri (deneme verisi gerçek kişilere göre güncellendi) ----------
+
+-- Gerçek referans formu yanıtı (izinli) id 5'e yazıldı
+UPDATE referanslar
+SET kisi_adi = 'Kaan Semih K.',
+    unvan = 'Üniversite Sınıf Arkadaşı',
+    yorum = 'Tatlı, sevecen adamdır kendisi. Bu adam gibi erkeklere pek rastlayamayız bu dünyada.',
+    puan = 4,
+    tarih = '2026-10-22',
+    izin_alindi = true,
+    kategori_id = 2
+WHERE id = 5;
+
+UPDATE referanslar
+SET kisi_adi = 'Hüseyin Efe U.',
+    unvan = 'Lise Sınıf Arkadaşı',
+    yorum = 'Lisede derslerde hep birbirimize destek olduk, sorumluluk sahibi ve güvenilir biridir.',
+    kategori_id = 1
+WHERE id = 4;
+
+UPDATE referanslar
+SET kisi_adi = 'Batuhan Ş.',
+    unvan = 'Lise Sınıf Arkadaşı'
+WHERE id = 2;
+
+UPDATE referanslar SET izin_alindi = false WHERE id = 6;
+
+DELETE FROM referanslar WHERE id IN (1, 8);
+
+-- 9. kayıt yönetim panelinden eklendi (INSERT, /admin/referanslar formu)
+
 -- =====================================================
 -- Görev 3: SQL sorguları
 -- =====================================================
@@ -94,4 +125,69 @@ INSERT INTO referanslar (kisi_adi, unvan, yorum, puan, tarih, izin_alindi, kateg
 SELECT * FROM referanslar
 WHERE puan >= 4 AND izin_alindi = true;
 
--- (3.2 - 3.7 eklenecek)
+-- Görev 3.2: En yeni 3 referans (tarihi boş olanlar en sona)
+SELECT * FROM referanslar
+ORDER BY tarih DESC NULLS LAST
+LIMIT 3;
+
+-- Görev 3.3: Her puandan kaç referans olduğu
+SELECT puan, COUNT(*) AS sayi
+FROM referanslar
+GROUP BY puan
+ORDER BY puan;
+
+-- Görev 3.4: Her kurum için referans sayısı; kaydı olmayan kurumlar 0 ile
+SELECT k.ad AS kurum, COUNT(r.id) AS referans_sayisi
+FROM referans_kurumlari k
+LEFT JOIN referanslar r ON r.kategori_id = k.id
+GROUP BY k.id, k.ad
+ORDER BY referans_sayisi DESC;
+
+-- Görev 3.5: kisi_adi alanında öğrenci numarası geçen kayıt
+SELECT * FROM referanslar
+WHERE kisi_adi ILIKE '%2516016006%';
+
+-- Görev 3.6: Yayın izni alınmamış referansları yayından kaldır
+UPDATE referanslar
+SET yayinda = false
+WHERE izin_alindi = false OR izin_alindi IS NULL
+RETURNING id, kisi_adi, izin_alindi, yayinda;
+
+-- Görev 3.7: 3 yıldan eski referansları sil
+DELETE FROM referanslar
+WHERE tarih < CURRENT_DATE - INTERVAL '3 years'
+RETURNING id, kisi_adi, tarih;
+
+-- =====================================================
+-- Görev 6: Parametreli arama (PREPARE / EXECUTE)
+-- =====================================================
+
+PREPARE referans_ara(text) AS
+  SELECT id, kisi_adi FROM referanslar
+  WHERE kisi_adi ILIKE '%' || $1 || '%';
+
+EXECUTE referans_ara('Kaan');                  -- 1 satır
+
+EXECUTE referans_ara(''' OR ''1''=''1');        -- 0 satır: girdi kod değil, veri olarak işlendi
+
+-- =====================================================
+-- Görev 7: Çerezler
+-- =====================================================
+
+CREATE TABLE cerezler (
+  id SERIAL PRIMARY KEY,
+  ad TEXT NOT NULL UNIQUE,
+  tur TEXT NOT NULL CHECK (tur IN ('zorunlu', 'işlevsel', 'analitik', 'pazarlama')),
+  amac TEXT NOT NULL,
+  sure TEXT NOT NULL
+);
+
+INSERT INTO cerezler (ad, tur, amac, sure) VALUES
+  ('admin_oturum', 'zorunlu',
+   'Site yöneticisinin yönetim paneline girişini açık tutar. Yalnızca yöneticinin tarayıcısına yazılır; ziyaretçilere çerez yazılmaz.',
+   '2 saat');
+
+-- Türe göre çerez sayısı
+SELECT tur, COUNT(*) AS cerez_sayisi
+FROM cerezler
+GROUP BY tur;
