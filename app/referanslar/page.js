@@ -47,7 +47,7 @@ export default async function ReferanslarPage() {
     FROM referanslar r
     LEFT JOIN referans_kurumlari k ON k.id = r.kategori_id
     WHERE r.yayinda = true AND r.izin_alindi = true
-    ORDER BY r.tarih DESC NULLS LAST, r.id DESC`;
+    ORDER BY r.puan DESC NULLS LAST, r.tarih DESC NULLS LAST`;
 
   const oneCikanIdler = new Set(oneCikanlar.map((r) => r.id));
   const digerleri = tumu.filter((r) => !oneCikanIdler.has(r.id));

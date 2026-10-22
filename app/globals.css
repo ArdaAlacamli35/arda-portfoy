@@ -479,7 +479,7 @@ button:disabled { opacity: 0.6; cursor: progress; }
 .notice p { margin-top: 10px; }
 
 /* ---------- referanslar ---------- */
-.eyebrow {
+.eyebrow, .section > h2.eyebrow {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--pencere);
