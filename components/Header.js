@@ -8,6 +8,7 @@ const links = [
   { href: "/projeler", label: "Projeler" },
   { href: "/deneyim", label: "Deneyim" },
   { href: "/yetenekler", label: "Yetenekler" },
+  { href: "/referanslar", label: "Referanslar" },
   { href: "/iletisim", label: "İletişim" },
 ];
 

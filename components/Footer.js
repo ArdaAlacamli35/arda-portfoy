@@ -4,6 +4,7 @@ export default function Footer() {
       <div className="wrap">
         <span>© 2026 Arda Alaçamlı, İzmir</span>
         <nav aria-label="Profiller">
+          <a href="/cerez-politikasi">Çerez Politikası</a>
           <a href="https://github.com/ArdaAlacamli35" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>

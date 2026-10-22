@@ -1,4 +1,5 @@
 import PageIntro from "@/components/PageIntro";
+import IletisimFormu from "./IletisimFormu";
 
 export const metadata = { title: "İletişim" };
 
@@ -47,6 +48,23 @@ export default function IletisimPage() {
       <div className="actions" data-reveal style={{ "--d": 3 }}>
         <a className="btn" href={mailto}>E-posta gönder</a>
       </div>
+
+      <section className="section">
+        <h2>Bana buradan yaz</h2>
+        <IletisimFormu />
+        <details className="notice">
+          <summary>Kişisel verilerin işlenmesine ilişkin aydınlatma metni</summary>
+          <p>
+            Veri sorumlusu Arda Alaçamlı&apos;dır. Formda yazdığın ad soyad, e-posta ve mesaj,
+            yalnızca mesajına yanıt verebilmek amacıyla, açık rızana dayanarak işlenir. Veriler,
+            Avrupa&apos;daki (Frankfurt) bir sunucuda bulunan veritabanında saklanır, üçüncü
+            kişilerle paylaşılmaz ve yanıt verildikten sonra en geç 6 ay içinde silinir. KVKK
+            11. madde kapsamındaki haklarını kullanmak ya da verilerinin silinmesini istemek için{" "}
+            <a className="text-link" href="mailto:alacamliarda35@gmail.com">alacamliarda35@gmail.com</a>{" "}
+            adresine yazabilirsin.
+          </p>
+        </details>
+      </section>
     </div>
   );
 }
