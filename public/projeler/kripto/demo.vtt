@@ -7,18 +7,18 @@ Canlı Kripto Piyasa Panosu: kurgusal bir üniversite finans kulübü için eği
 Fiyatlar Binance'ten WebSocket ile geliyor; sayfa yenilenmeden saniyede bir güncelleniyor
 
 00:00:19.000 --> 00:00:31.000
-Kullanıcı testinden sonra eklenen “Bugün öne çıkanlar”: en iyi, en kötü ve en çok birlikte hareket eden varlık
+Kullanıcı testinden alınan sonuçların değerlendirmesine göre “Bugün öne çıkanlar” oluşturulmuştur
 
 00:00:31.000 --> 00:00:39.000
 Varlık ve zaman aralığı değişince grafik ve üstündeki özet cümlesi otomatik güncelleniyor
 
 00:00:39.000 --> 00:00:47.000
-Artış mavi, düşüş turuncu ve her zaman ok işaretiyle: renk tek başına anlam taşımıyor
+Getiri karşılaştırmasında artışlar mavi, düşüşler turuncu olarak gösterilmiştir
 
-00:00:47.000 --> 00:00:56.000
-Korelasyon matrisi: 1'e yakın değer, iki varlığın son 24 saatte birlikte hareket ettiğini gösterir
+00:00:47.000 --> 00:00:53.000
+Getiri korelasyonunda varlıkların birbiriyle ne kadar paralel hareket ettiğini gösterdik
 
-00:00:56.000 --> 00:01:05.000
+00:00:53.000 --> 00:01:05.000
 Bağlantı kesilince pano bunu açıkça söylüyor ve son başarılı veriyi göstermeye devam ediyor
 
 00:01:05.000 --> 00:01:12.000
