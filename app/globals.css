@@ -656,3 +656,6 @@ button.pill:hover { border-color: var(--sis); }
 .embed { margin-top: 16px; border: 1px solid var(--cizgi); border-radius: 8px; overflow: hidden; height: min(80vh, 680px); min-height: 520px; }
 .embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 @media (max-width: 760px) { .embed { height: 1000px; } }
+.case-grid.two { grid-template-columns: 1fr 1fr; }
+@media (max-width: 720px) { .case-grid.two { grid-template-columns: 1fr; } }
+.case .table-wrap { margin-top: 16px; overflow-x: auto; }

@@ -94,7 +94,7 @@ export default function KriptoVaka() {
           <dd>
             Tüm kontroller klavyeyle kullanılabiliyor (grafikte ← → ile noktalar arasında gezilir). Her grafiğin
             yanında otomatik tek cümlelik özet ve &quot;veriyi tablo olarak gör&quot; seçeneği var. İkincil metin
-            rengi kontrast için bir ton açıldı (7,4:1).
+            rengi kontrast için bir ton açıldı (7,4:1). Lighthouse mobil: erişilebilirlik 96, performans 90.
           </dd>
           <dt>Durumlar</dt>
           <dd>Yükleniyor (iskelet), boş sonuç (filtre eşleşmedi) ve hata (API yok) ayrı ayrı tasarlandı.</dd>
@@ -148,11 +148,51 @@ export default function KriptoVaka() {
       <section className="section">
         <h2>Kullanıcı testi</h2>
         <div className="prose">
-          <p className="muted">
-            Finans kulübü profiline benzeyen 2 öğrenciyle 3 görevli test: (1) &quot;Son 24 saatte en çok yükselen
-            varlık hangisi?&quot;, (2) &quot;ETH&apos;nin 7 günlük grafiğini aç&quot;, (3) &quot;BTC ile en birlikte
-            hareket eden varlığı bul&quot;. Bulgular ve test sonrası yapılan değişiklik bu bölüme eklenecek.
+          <p>
+            Borsa ya da kripto takip etmeyen 2 öğrenciyle (19 yaş), Discord üzerinden ekran paylaşımıyla 3 görevli test
+            yaptım. Yardım etmedim, süreleri kronometreyle ölçtüm.
           </p>
+        </div>
+        <div className="table-wrap">
+          <table className="table">
+            <thead>
+              <tr><th>Görev</th><th>Katılımcı 1</th><th>Katılımcı 2</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>24 saatte fiyatı en iyi giden varlık</td><td>Başaramadı (görevi anlamadı)</td><td>Başardı · 36,2 sn</td></tr>
+              <tr><td>Ethereum&apos;un 7 günlük grafiği</td><td>Başardı · 5,9 sn</td><td>Başardı · 2,6 sn</td></tr>
+              <tr><td>BTC ile en çok birlikte hareket eden</td><td>Başardı · 17,5 sn</td><td>Başardı · 30 sn (önce yanlış tabloya baktı)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <dl className="io">
+          <dt>Bulgu</dt>
+          <dd>
+            Filtreler hemen anlaşıldı. Zorlanılan yer özet bilgiydi: &quot;bugün en iyi giden hangisi?&quot; ve &quot;hangi
+            çift birlikte hareket ediyor?&quot; sorularının cevabını katılımcılar grafiklerden kendileri çıkarmak zorunda kaldı.
+          </dd>
+          <dt>Değişiklik</dt>
+          <dd>
+            KPI kartlarının altına &quot;Bugün öne çıkanlar&quot; şeridi ekledim (en iyi, en kötü, seçili varlıkla en yüksek
+            korelasyon). Katılımcı 1&apos;in önerisiyle getiri grafiğinin tablosu artık açık geliyor.
+          </dd>
+          <dt>Yöntem notu</dt>
+          <dd>
+            İlk katılımcıya site açılır açılmaz görev verdim ve görevin ifadesi anlaşılmadı. İkinci katılımcıya 20 saniyelik
+            tanışma süresi tanıdım ve görevi sadeleştirdim.
+          </dd>
+        </dl>
+        <div className="case-grid two">
+          <figure className="case-figure">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/projeler/kripto/test-once.webp" alt="Testten önce: KPI kartlarının altında doğrudan grafikler başlıyor" loading="lazy" />
+            <figcaption>Önce: özet bilgi grafiklerin içinde</figcaption>
+          </figure>
+          <figure className="case-figure">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/projeler/kripto/test-sonra.webp" alt="Testten sonra: KPI kartlarının altında Bugün öne çıkanlar şeridi" loading="lazy" />
+            <figcaption>Sonra: &quot;Bugün öne çıkanlar&quot; şeridi</figcaption>
+          </figure>
         </div>
       </section>
 
