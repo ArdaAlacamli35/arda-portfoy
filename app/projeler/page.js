@@ -16,6 +16,55 @@ export default function ProjelerPage() {
       </PageIntro>
 
       <article className="project" data-reveal>
+        <p className="kind">Gerçek zamanlı veri ürünü · Bulut güvenliği</p>
+        <h2>Canlı Kripto Piyasa Panosu</h2>
+        <div className="prose">
+          <p>
+            Bir üniversite finans kulübü için (kurgusal müşteri) beş kripto varlığın fiyatını WebSocket ile canlı
+            izleyen pano. Bağlantı koptuğunda otomatik yeniden bağlanıyor ve durumu görünür şekilde gösteriyor.
+            API kapalıyken son başarılı veriyle açılıyor. Varlıklar arası 24 saatlik getiri korelasyonunu
+            hesaplıyor. Cloudflare Pages üzerinde sıkı CSP, Trusted Types ve gelen her mesaja şema doğrulamasıyla
+            yayında.
+          </p>
+        </div>
+        <ul className="tags" aria-label="Kullanılan teknolojiler">
+          <li>WebSocket</li>
+          <li>D3.js</li>
+          <li>zod</li>
+          <li>CSP · Trusted Types</li>
+          <li>Cloudflare Pages</li>
+          <li>GitHub Actions</li>
+        </ul>
+        <div className="actions">
+          <a className="btn" href="/projeler/kripto-piyasa-panosu">Vaka çalışması</a>
+          <a className="btn alt" href="https://kripto-piyasa-panosu.pages.dev" target="_blank" rel="noopener noreferrer">Canlı pano</a>
+          <a className="btn alt" href="https://github.com/ArdaAlacamli35/kripto-piyasa-panosu" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article className="project" data-reveal>
+        <p className="kind">Sosyal ağ analizi</p>
+        <h2>Kripto Takas Platformunda Güven Ağı</h2>
+        <div className="prose">
+          <p>
+            Bitcoin OTC kullanıcılarının birbirine verdiği güven/güvensizlik puanlarından işaretli bir ağ kurdum.
+            Yapısal denge analiziyle ağın dengeli olduğunu, güvensizliğin ise üç toplulukta iki farklı mekanizmayla
+            yoğunlaştığını gösterdim. Bulguları 1.000 rastgele ağla sınadım.
+          </p>
+        </div>
+        <ul className="tags" aria-label="Kullanılan yöntemler">
+          <li>Yapısal denge</li>
+          <li>Leiden</li>
+          <li>Null model</li>
+          <li>Sigma.js</li>
+        </ul>
+        <div className="actions">
+          <a className="btn" href="/projeler/bitcoin-guven-agi">Etkileşimli ağ ve bulgular</a>
+          <a className="btn alt" href="https://github.com/ArdaAlacamli35/bitcoin-guven-agi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article className="project" data-reveal>
         <p className="kind">Veri hikâyesi</p>
         <h2>Türkiye Deprem Hikâyesi</h2>
         <div className="prose">

@@ -638,3 +638,21 @@ button.pill:hover { border-color: var(--sis); }
     transition: none !important;
   }
 }
+
+/* ---------- vaka çalışması sayfaları ---------- */
+.case .actions { margin-top: 20px; }
+.case-note { margin-top: 16px; color: var(--sis); font-size: 0.9375rem; }
+.case-figure { margin: 20px 0 0; }
+.case-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--cizgi); border-radius: 8px; }
+.case-figure.light img { background: #fff; padding: 8px; }
+.case-figure.narrow { max-width: 360px; }
+.case-figure figcaption { margin-top: 8px; color: var(--sis); font-size: 0.875rem; }
+.case-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+@media (max-width: 720px) { .case-grid { grid-template-columns: 1fr; } }
+.controls-list { list-style: decimal; padding-left: 22px; margin-top: 16px; display: grid; gap: 10px; }
+.controls-list li::marker { color: var(--pencere); font-weight: 700; }
+.case code { font-size: 0.9em; background: var(--duvar, #1b1c1f); padding: 1px 5px; border-radius: 4px; }
+.case-video { width: 100%; border-radius: 8px; border: 1px solid var(--cizgi); margin-top: 12px; }
+.embed { margin-top: 16px; border: 1px solid var(--cizgi); border-radius: 8px; overflow: hidden; height: min(80vh, 680px); min-height: 520px; }
+.embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+@media (max-width: 760px) { .embed { height: 1000px; } }

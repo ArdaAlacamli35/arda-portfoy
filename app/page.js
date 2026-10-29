@@ -11,6 +11,18 @@ const facts = [
 
 const projects = [
   {
+    title: "Canlı Kripto Piyasa Panosu",
+    kind: "Gerçek zamanlı pano",
+    href: "/projeler/kripto-piyasa-panosu",
+    text: "Binance WebSocket akışıyla canlı fiyat, kendini toparlayan bağlantı ve 5 varlığın getiri korelasyonu; sıkı CSP ve şema doğrulamalı.",
+  },
+  {
+    title: "Bitcoin OTC Güven Ağı",
+    kind: "Sosyal ağ analizi",
+    href: "/projeler/bitcoin-guven-agi",
+    text: "5.881 kullanıcılı işaretli güven ağında yapısal denge: ağ dengeli, güvensizlik üç kümede yoğunlaşıyor.",
+  },
+  {
     title: "Türkiye Deprem Hikâyesi",
     kind: "Veri hikâyesi",
     text: "1914–2023 depremlerini kaydırdıkça ilerleyen harita ve grafiklerle anlatan interaktif site.",
@@ -55,7 +67,7 @@ export default function HomePage() {
           <ul className="project-list">
             {projects.map((p, i) => (
               <li key={p.title} data-reveal style={{ "--d": i + 1 }}>
-                <Link href="/projeler">
+                <Link href={p.href ?? "/projeler"}>
                   <h3>{p.title}</h3>
                   <span className="kind">{p.kind}</span>
                   <p>{p.text}</p>
