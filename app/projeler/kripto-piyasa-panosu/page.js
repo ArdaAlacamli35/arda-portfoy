@@ -138,7 +138,7 @@ export default function KriptoVaka() {
         <h2>Demo videosu</h2>
         {videoVar ? (
           <video className="case-video" controls preload="metadata" src="/projeler/kripto/demo.mp4">
-            <track kind="captions" srcLang="tr" label="Türkçe" src="/projeler/kripto/demo.vtt" default />
+            <track kind="captions" srcLang="tr" label="Türkçe" src="/projeler/kripto/demo.vtt" />
           </video>
         ) : (
           <p className="muted">Demo videosu yakında eklenecek.</p>
