@@ -66,7 +66,7 @@ export default function KriptoVaka() {
           <figure className="case-figure">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/projeler/kripto/masaustu.webp" alt="Panonun 1440 piksel genişlikte masaüstü görünümü" loading="lazy" />
-            <figcaption>1440 px: KPI → grafik → tablo akışı</figcaption>
+            <figcaption>Canlı veriyle masaüstü görünümü: KPI → grafik → tablo akışı</figcaption>
           </figure>
           <figure className="case-figure narrow">
             {/* eslint-disable-next-line @next/next/no-img-element */}
