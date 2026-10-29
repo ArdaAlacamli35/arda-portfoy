@@ -1,37 +1,28 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.000
-Canlı Kripto Piyasa Panosu
-Kurgusal müşteri: üniversite finans kulübü
+00:00:00.000 --> 00:00:09.000
+Canlı Kripto Piyasa Panosu: kurgusal bir üniversite finans kulübü için eğitim amaçlı pano
 
-00:00:06.000 --> 00:00:14.000
-Fiyatlar Binance'ten canlı geliyor (WebSocket)
-Sayfa yenilenmeden, saniyede bir güncelleniyor
+00:00:09.000 --> 00:00:19.000
+Fiyatlar Binance'ten WebSocket ile geliyor; sayfa yenilenmeden saniyede bir güncelleniyor
 
-00:00:14.000 --> 00:00:22.000
-“Bugün öne çıkanlar”: en iyi ve en kötü varlık
-Kullanıcı testinden sonra eklendi
+00:00:19.000 --> 00:00:31.000
+Kullanıcı testinden sonra eklenen “Bugün öne çıkanlar”: en iyi, en kötü ve en çok birlikte hareket eden varlık
 
-00:00:22.000 --> 00:00:29.000
-Varlık: Ethereum · Aralık: 7 gün
-Grafik ve özet cümlesi otomatik değişiyor
+00:00:31.000 --> 00:00:39.000
+Varlık ve zaman aralığı değişince grafik ve üstündeki özet cümlesi otomatik güncelleniyor
 
-00:00:29.000 --> 00:00:35.000
-Mavi = artış, turuncu = düşüş
-Her değerin yanında ▲ ya da ▼ işareti var
+00:00:39.000 --> 00:00:47.000
+Artış mavi, düşüş turuncu ve her zaman ok işaretiyle: renk tek başına anlam taşımıyor
 
-00:00:35.000 --> 00:00:41.000
-Korelasyon matrisi: 1'e yakın değer
-iki varlığın birlikte hareket ettiğini gösterir
+00:00:47.000 --> 00:00:56.000
+Korelasyon matrisi: 1'e yakın değer, iki varlığın son 24 saatte birlikte hareket ettiğini gösterir
 
-00:00:41.000 --> 00:00:49.000
-İnternet kesildi: pano bunu açıkça yazıyor
-ve son başarılı veriyi göstermeye devam ediyor
+00:00:56.000 --> 00:01:05.000
+Bağlantı kesilince pano bunu açıkça söylüyor ve son başarılı veriyi göstermeye devam ediyor
 
-00:00:49.000 --> 00:00:56.000
-İnternet geldi: pano kendiliğinden
-yeniden bağlanıyor ve canlıya dönüyor
+00:01:05.000 --> 00:01:12.000
+Bağlantı gelince otomatik olarak yeniden bağlanıyor ve canlı akışa dönüyor
 
-00:00:56.000 --> 00:01:05.500
-Her grafik tablo olarak da görülebiliyor
-Lighthouse mobil: erişilebilirlik 96, performans 90
+00:01:12.000 --> 00:01:21.500
+Her grafik tablo olarak da görülebiliyor · Lighthouse mobil: erişilebilirlik 96, performans 90
